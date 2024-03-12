@@ -11,6 +11,8 @@ import { FaMoon, FaQuestionCircle } from "react-icons/fa";
 import { FaUserGroup } from "react-icons/fa6";
 import { HiOutlineUserGroup } from "react-icons/hi";
 import ActiveLink from '../../Components/ActiveLink/ActiveLink';
+import { useTheme } from '../../Provider/ThemeContext';
+import './Navbar.css'
 
 
 
@@ -19,6 +21,7 @@ const Navbar = () => {
     const [showUserProfile, setShowUserProfile] = useState(false);
     const [showNotifications, setShowNotifications] = useState(false);
     const [showMessages, setShowMessages] = useState(false);
+    const { isDarkMode, toggleDarkMode } = useTheme();
 
     const toggleUserProfile = () => {
         setShowUserProfile(!showUserProfile);
@@ -31,8 +34,8 @@ const Navbar = () => {
         setShowMessages(!showMessages);
     };
     return (
-        <div className="nav-bg py-1 fixed top-0 w-full z-10">
-            <div className="max-w-7xl mx-auto flex justify-between items-center">
+        <div className={isDarkMode ? "bg-custom2 py-1 fixed top-0 w-full z-10 shadow-lg" : "nav-bg py-1 fixed top-0 w-full z-10"}>
+            <div className=" mx-4 flex justify-between items-center">
                 {/* Logo */}
                 <div className="flex items-center">
                     <img src={logo} alt="Logo" className="h-12 mr-4" />
@@ -105,21 +108,26 @@ const Navbar = () => {
                             <span>Nafiz Al Turabi</span>
                         </button>
                         {showUserProfile && (
-                            <div className="absolute w-64 top-full right-2 bg-white mt-2 rounded-md shadow-lg">
+                            <div className={isDarkMode ? "absolute w-64 top-full right-2 bg-custom mt-2 rounded-md shadow-lg" : "absolute w-64 top-full right-2 bg-white mt-2 rounded-md shadow-lg"}>
                                 <div className="py-2 px-4">
-                                    <button className=' w-full rounded-lg p-1 hover:bg-gray-100 duration-300'>
+                                    <button className={isDarkMode ? ' w-full rounded-lg px-2 py-3 hover:bg-[#606060] duration-300' : ' w-full rounded-lg px-2 py-3 hover:bg-gray-100 duration-300'}>
                                         <div className='flex items-center space-x-3'>
                                             <img
                                                 src="/profile.jpg"
                                                 alt="User Profile"
                                                 className="h-12 w-12 rounded-full border"
                                             />
-                                            <p className="text-gray-800 font-semibold text-center">Nafiz Al Turabi</p>
+                                            <p className="font-semibold text-center">Nafiz Al Turabi</p>
                                         </div>
                                     </button>
-                                    <Link to='/' className='flex text-gray-700 items-center text-lg p-1 py-2 mt-2 hover:bg-gray-100 duration-300 rounded-md'> <FaQuestionCircle className='mr-2' /> Help & Support</Link>
-                                    <Link to='/' className='flex text-gray-700 items-center text-lg p-1 py-2 mt-2 hover:bg-gray-100 duration-300 rounded-md'> <IoSettingsSharp className='mr-2' /> Settings</Link>
-                                    <Link to='/' className='flex text-gray-700 items-center text-lg p-1 py-2 mt-2 hover:bg-gray-100 duration-300 rounded-md'> <FaMoon className='mr-2 ' /> Display & accessibility</Link>
+                                    <Link to='/' className={isDarkMode ? 'flex items-center text-lg px-2 py-3 mt-2 hover:bg-[#606060] duration-300 rounded-md' : 'flex items-center text-lg px-2 py-3 mt-2 hover:bg-gray-100 duration-300 rounded-md'}> <FaQuestionCircle className='mr-2' /> Help & Support</Link>
+                                    <Link to='/' className={isDarkMode ? 'flex items-center text-lg px-2 py-3 mt-2 hover:bg-[#606060] duration-300 rounded-md' : 'flex items-center text-lg px-2 py-3 mt-2 hover:bg-gray-100 duration-300 rounded-md'}> <IoSettingsSharp className='mr-2' /> Settings</Link>
+                                    <p to='/' className={isDarkMode ? 'flex items-center text-lg px-2 py-3 mt-2 hover:bg-[#606060] duration-300 rounded-md' : 'flex items-center text-lg px-2 py-3 mt-2 hover:bg-gray-100 duration-300 rounded-md'}> <FaMoon className='mr-2 ' /> Display
+                                        <label className="switch ml-20">
+                                            <input type="checkbox" checked={isDarkMode} onChange={toggleDarkMode} />
+                                            <span className="slider"></span>
+                                        </label>
+                                    </p>
                                     <button className="text-red-500 text-lg p-1 flex items-center mt-2"><HiOutlineLogout className='mr-2' />Logout</button>
                                 </div>
                             </div>

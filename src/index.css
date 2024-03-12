@@ -71,25 +71,45 @@ button:focus-visible {
   }
 } */
 
+.dark {
+  background-color: #242424;
+  color: #ffffff;
+}
+
+/* Light mode styles */
+.light {
+  background-color: #ffffff;
+  color: #141414;
+}
+
 .primary-bg{
-  @apply bg-[#ffc8a9]
+  @apply bg-[#2D9596]
 }
 .secondary-bg{
-  @apply bg-[#FFFDD0]
+  @apply bg-[#F1FADA]
 }
 .primary-text{
-  @apply text-[#ffc8a9]
+  @apply text-[#2D9596]
 }
 .secondary-text{
-  @apply text-[#FFFDD0]
+  @apply text-[#F1FADA]
 }
 .primary-border{
-  @apply border-[#ffc8a9]
+  @apply border-[#2D9596]
 }
 .secondary-border{
-  @apply border-[#FFFDD0]
+  @apply border-[#F1FADA]
 }
 .nav-bg{
-  @apply bg-[#f37e3a]
+  @apply bg-[#2D9596]
 
+}
+
+/* bg- */
+
+.bg-custom{
+  @apply bg-[#292929]
+}
+.bg-custom2{
+  @apply bg-[#606060]
 }

@@ -26,7 +26,7 @@ const Home = () => {
       </button>
 
       {/* Sidebar 1 */}
-      <div className={`w-1/2 lg:w-1/4 bg-gray-200 p-4 fixed h-full ${isSidebar1Open ? 'block' : 'hidden'} md:block`}>
+      <div className={`w-1/2 lg:w-1/4 p-4 fixed h-full ${isSidebar1Open ? 'block' : 'hidden'} md:block`}>
         <LeftBar/>
       </div>
 
@@ -44,7 +44,7 @@ const Home = () => {
       </button>
 
       {/* Sidebar 2 */}
-      <div className={` w-1/2 lg:w-1/4 bg-gray-200 p-4 fixed h-full right-0 ${isSidebar2Open ? 'block' : 'hidden'} md:block`}>
+      <div className={` w-1/2 lg:w-1/4 p-4 fixed h-full right-0 ${isSidebar2Open ? 'block' : 'hidden'} md:block`}>
         <RightBar/>
       </div>
     </div>

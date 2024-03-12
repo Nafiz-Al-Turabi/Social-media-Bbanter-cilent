@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../Shared/Navbar/Navbar';
 import { Outlet } from 'react-router-dom';
+import { useTheme } from '../Provider/ThemeContext';
 
 const Layout = () => {
     const [showLeftSidebar, setShowLeftSidebar] = useState(false);
     const [showRightSidebar, setShowRightSidebar] = useState(false);
+    const {isDarkMode, setDarkMode}=useTheme();
 
     const toggleLeftSidebar = () => {
         setShowLeftSidebar(!showLeftSidebar);
@@ -42,7 +44,7 @@ const Layout = () => {
     }, []);
 
     return (
-        <div className="mt-12">
+        <div className={`mt-12 h-screen  ${isDarkMode ? 'dark' : 'light'}`}>
             <Navbar/>
             <Outlet/>
         </div>
