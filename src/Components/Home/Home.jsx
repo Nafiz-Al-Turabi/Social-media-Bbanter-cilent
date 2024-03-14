@@ -16,7 +16,7 @@ const Home = () => {
   };
 
   return (
-    <div className="relative flex">
+    <div className="relative flex h-screen">
       {/* Toggle button for Sidebar 1 (Top Left) */}
       <button
         className="absolute top-96 z-50 left-0 m-4 md:hidden"

@@ -86,19 +86,19 @@ button:focus-visible {
   @apply bg-[#2D9596]
 }
 .secondary-bg{
-  @apply bg-[#F1FADA]
+  @apply bg-[#70ded9]
 }
 .primary-text{
   @apply text-[#2D9596]
 }
 .secondary-text{
-  @apply text-[#F1FADA]
+  @apply text-[#70ded9]
 }
 .primary-border{
   @apply border-[#2D9596]
 }
 .secondary-border{
-  @apply border-[#F1FADA]
+  @apply border-[#70ded9]
 }
 .nav-bg{
   @apply bg-[#2D9596]

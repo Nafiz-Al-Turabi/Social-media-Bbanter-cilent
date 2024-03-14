@@ -4,7 +4,7 @@ import { AiOutlineBell, AiOutlineMessage, AiOutlineShop } from "react-icons/ai";
 import { GoHomeFill } from "react-icons/go";
 import { PiVideoFill } from "react-icons/pi";
 import { IoSettingsSharp } from "react-icons/io5";
-import logo from '../../assets/logo-s.svg'
+import logo from '../../assets/logo.svg'
 import { Link } from 'react-router-dom';
 import { HiOutlineLogout } from "react-icons/hi";
 import { FaMoon, FaQuestionCircle } from "react-icons/fa";
@@ -41,7 +41,7 @@ const Navbar = () => {
                     <img src={logo} alt="Logo" className="h-12 mr-4" />
                     {/* <p className='text-5xl'>B</p> */}
                     {/* Search */}
-                    <div className="flex items-center">
+                    <div className=" items-center hidden md:block">
                         <input
                             type="text"
                             placeholder="Search"
@@ -54,8 +54,8 @@ const Navbar = () => {
                 {/* Items */}
                 <div className="flex items-center ">
                     <ActiveLink to="/" ><GoHomeFill /></ActiveLink>
-                    <ActiveLink to="/friend" ><FaUserGroup /></ActiveLink>
-                    <ActiveLink to="/video" ><PiVideoFill /></ActiveLink>
+                    <ActiveLink to="/friedns" ><FaUserGroup /></ActiveLink>
+                    <ActiveLink to="/videos" ><PiVideoFill /></ActiveLink>
                     <ActiveLink to="/marketplace" ><AiOutlineShop /></ActiveLink>
                     <ActiveLink to="/group" ><HiOutlineUserGroup /></ActiveLink>
 
@@ -105,20 +105,20 @@ const Navbar = () => {
                                 alt="User Profile"
                                 className="h-8 w-8 rounded-full border"
                             />
-                            <span>Nafiz Al Turabi</span>
+                            <span className='font-bold ml-2'>Nafiz Al Turabi</span>
                         </button>
                         {showUserProfile && (
                             <div className={isDarkMode ? "absolute w-64 top-full right-2 bg-custom mt-2 rounded-md shadow-lg" : "absolute w-64 top-full right-2 bg-white mt-2 rounded-md shadow-lg"}>
                                 <div className="py-2 px-4">
                                     <button className={isDarkMode ? ' w-full rounded-lg px-2 py-3 hover:bg-[#606060] duration-300' : ' w-full rounded-lg px-2 py-3 hover:bg-gray-100 duration-300'}>
-                                        <div className='flex items-center space-x-3'>
+                                        <Link to='/userProfile' className='flex items-center space-x-3'>
                                             <img
                                                 src="/profile.jpg"
                                                 alt="User Profile"
                                                 className="h-12 w-12 rounded-full border"
                                             />
-                                            <p className="font-semibold text-center">Nafiz Al Turabi</p>
-                                        </div>
+                                            <p className="font-bold text-center">Nafiz Al Turabi</p>
+                                        </Link>
                                     </button>
                                     <Link to='/' className={isDarkMode ? 'flex items-center text-lg px-2 py-3 mt-2 hover:bg-[#606060] duration-300 rounded-md' : 'flex items-center text-lg px-2 py-3 mt-2 hover:bg-gray-100 duration-300 rounded-md'}> <FaQuestionCircle className='mr-2' /> Help & Support</Link>
                                     <Link to='/' className={isDarkMode ? 'flex items-center text-lg px-2 py-3 mt-2 hover:bg-[#606060] duration-300 rounded-md' : 'flex items-center text-lg px-2 py-3 mt-2 hover:bg-gray-100 duration-300 rounded-md'}> <IoSettingsSharp className='mr-2' /> Settings</Link>

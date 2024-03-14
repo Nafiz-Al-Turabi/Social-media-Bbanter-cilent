@@ -19,7 +19,7 @@ const Post = () => {
         <div>
             <div className={isDarkMode ? ' rounded-lg shadow-lg bg-custom ' : 'border rounded-lg bg-gray-100 shadow-md'}>
                 <div className={isDarkMode ? 'flex items-center bg-custom2 p-2 rounded-t-lg border-b border-gray-700' : 'flex items-center bg-white p-2 rounded-t-lg border-b'}>
-                    <img src="/photo.jpg" alt="photo" className='w-10 h-10 rounded-full border ' />
+                    <img src="/photo.jpg" alt="photo" className='w-10 h-10 rounded-full border object-cover' />
                     <button onClick={openModal} className='w-full  font-semibold text-left p-3'>Whats on you mind, user name</button>
                 </div>
                 {/* <hr className={isDarkMode ? 'border border-gray-700' : 'border'} /> */}
